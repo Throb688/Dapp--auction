@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="/javascripts/abi/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/test.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/seller/seller.css">
+    <script src="/javascripts/manage/manage.js"></script>
+</head>
+<body>
+  <link rel='stylesheet prefetch' href='/stylesheets/test1.css'>
+  <header>
+    <div class="logo"><a href="#"><h1>AU</h1></a>
+     
+    </div>
+    <nav role='navigation'>
+        <ul>
+          <li><a  href="/">拍卖中心</a>
+          </li>
+          <li><a class="active" href="/seller">卖方中心</a>
+          </li>
+          
+          <li><a href="/manage">管理中心</a>
+          </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="comments">
+    <div class="comment-wrap">
+        <div class="comment-block">
+            <p class="comment-text">请正确填入下列信息</p>
+            <form  enctype="multipart/form-data" method="post" action="/seller">
+              图片1：<input type="file" name="file1" multiple="multiple" /> 
+              图片2：<input type="file" name="file2" multiple="multiple" />
+              图片3：<input type="file" name="file3" multiple="multiple" /> 
+            <div>
+              <span>拍卖物品名称：<input type="text" name="GoodsName" class="ab"></span>
+              物品描述：<input type="text" name="describe" class="ab"></span>
+              物品起拍价格：<input type="number" name="price" placeholder="请输入数字,单位为wei">
+              物品持续时间：<input type="number" name="time"  placeholder="秒为单位"><P>1分钟等于60秒,1小时等于3600秒,5分钟内免费</P>
+            </div>
+            
+              <input type="submit" id="shop" value="提交" >
+              </form>
+        </div>
+    </div>
+</div>
+<div>
+  <button onclick="balanceOf()" id="balance">查看当前账户的ERC20余额</button>
+  <button onclick="ethToToken()" id="ethToToken">Eth换Token</button>
+</div>
+
+
+<footer>
+    <p>&copy; All Rights Reserved.</p>
+</footer>
+<script type="text/javascript" src="/javascripts/abi/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/abi/web3.min.js"></script>
+<script type="text/javascript" src="/javascripts/abi/app1.js"></script>
+<script src="/javascripts/seller/seller.js"></script>
+</body>
+</html>

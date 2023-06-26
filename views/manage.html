@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="/javascripts/jquery-1.9.1.min.js"></script>   
+    <link rel="stylesheet" type="text/css" href="/stylesheets/test.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/manage/manage.css">
+    <script src="/javascripts/manage/manage.js"></script>
+    
+</head>
+<body>
+  <link rel='stylesheet prefetch' href='/stylesheets/test1.css'>
+  <header>
+    <div class="logo"><a href="#"><h1>AU</h1></a>
+    </div>
+    <nav role='navigation'>
+        <ul>
+            <li><a href="/">拍卖中心</a>
+            </li>
+            <li><a  href="/seller">卖方中心</a>
+            </li>
+            <li><a class="active"  href="/manage">管理中心</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<section>
+    <!--for demo wrap-->
+    <h1>未拍卖品</h1>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>拍卖序号</th>
+                    <th style="width: 400px;">拍卖人</th>
+                    <th>拍卖价格</th>
+                    <th>产品描述</th>
+                    <th>拍卖持续时间</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div id="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody id="aaa">
+                <% action.forEach(i =>{%>
+                <tr>
+                    <td><%= i.actionnumber%></td>
+                    <td style="width: 400px;"><%= i.owners%> </td>
+                    <td><%= i._value%></td>
+                    <td><%= i.details%></td>
+                    <td><%= i.continueTime%></td>
+                </tr>
+                <%})%>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section>
+    <!--for demo wrap-->
+    <h1>交易案例</h1>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th style="width: 216px;">拍卖序号</th>
+                    <th style="width: 300px;">拍卖人</th>
+                    <th style="margin-left: 300px;">获得者</th>
+                    <th style="width: 214px ;">成交价格</th>
+                    <th>成交时间</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <% Deal.forEach(i =>{%>
+                    <%  var b = new Date(parseInt(i.tradingHour) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ')%>
+                    <tr>
+                        <td style="width: 109px;"><%= i.x%></td>
+                        <td style="width: 319px;"><%= i.owner%> </td>
+                        <td style="width: 317px;"><%= i.gainer%></td>
+                        <td style="width: 176px;"><%= i._values%></td>
+                        <td><%= b%></td>
+                    </tr>
+                    <%})%>
+            </tbody>
+        </table>
+    </div>
+</section>
+    
+    <footer>
+        <p>&copy; All Rights Reserved.</p>
+    </footer>
+</body>
+<script type="text/javascript" src="/javascripts/abi/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/abi/web3.min.js"></script>
+<script type="text/javascript" src="/javascripts/abi/app1.js"></script>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/test.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/test2.css">
+  <link rel='stylesheet prefetch' href='/stylesheets/test1.css'>
+  <script src="/javascripts/jquery-1.9.1.min.js"></script>
+  </script>
+</head>
+<body>
+    <input type="text" id="time1" style="display: none;" value="<%=time12%>" >
+  <header>
+      <div class="logo"><a href="#"><h1>AU</h1></a>
+      </div>
+      <nav role='navigation'>
+          <ul>
+            <li><a class="active" href="/">拍卖中心</a>
+            </li>
+            <li><a  href="/seller">卖方中心</a>
+            </li>
+            
+            <li><a href="/manage">管理中心</a>
+            </li>
+          </ul>
+      </nav>
+  </header>
+  <hr>  
+<div class="content">
+    <div class="container">
+          <h1><span class="item-status">竞拍</span>
+            <%= Goods1.goodName%>
+          </h1>
+          <hr>
+     <div class="pm-main-l"  style="display: flex;">
+	    <div class="pm-pic pm-s425 J_HeadImageWrap">
+                <img id="bigImg J_ImgBooth " class="bigImg"  src="<%=Goods1.imglist[0] %>"  alt="关于被执行人车辆拍卖" width="460px" height="345px" data-haszoom="460" >
+                <ul class="ul">
+                    <li class="active" id="li">
+                        <a href="">
+                            <img src="<%=Goods1.imglist[0] %>" data-haszoom="460" width="110px" height="100px" class="smallImg">
+                        </a>
+                    </li>
+                    <li id="li">
+                        <a href="">
+                            <img src="<%=Goods1.imglist[1] %>" width="110px" height="100px" class="smallImg">
+                        </a>
+                    </li>
+                    <li id="li">
+                        <a href="">
+                            <img src="<%=Goods1.imglist[2] %>"  width="110px" height="100px" class="smallImg">
+                        </a>
+                    </li>
+                </ul>
+    </div>
+
+    <div class="comments">
+        <div class="comment-wrap">
+            <div class="comment-block">
+                <p class="comment-text">距结束：</p>
+                <div>
+                    <p>
+                    <span id="timeTit"></span>  <div id="timer" style="color:red"></div>
+                    <div id="warring" style="color:red"></div>
+                    </p>
+                </div>
+               <span>当前价：<%= highestBid%><p>当前出价人:<%= highestBidder%></p></span>
+               
+            </div>
+        </div>
+        <div class="comment-wrap">
+            <div class="comment-block">
+                <p class="comment-text">出价</p>
+                <label class="pure-material-textfield-outlined">
+                    <input placeholder="" id="bidder">
+                    <span>请输入你的价格</span>
+                </label>
+                <button  onclick="bidderSend()">提交</button>
+                <button  onclick="setAuctionEnd()">结束拍卖</button>
+                <button  onclick="overtime1()">延长拍卖时间</button>
+            </div>
+        </div>
+        <div>
+            <h5 style="color: red;">竞拍提示：</h5>
+            <ol>
+                <li>拍卖价格一旦提交成功，则无法取消</li>
+                <li>拍卖中的商品请大家自行判断是否物美价廉</li>
+                <li>请大家理性消费，请勿进行抬价</li>
+              </ol>
+        </div>
+    </div>
+</div>
+<div style="margin-top: 496px">
+    <div id="ft">
+        <p>拍卖人对物品介绍</p>
+    </div>
+    <input type="text" value="<%= Goods1.details %>" style="width: 1000px;height: 200px;" readonly>
+</div>
+
+</button>
+
+</body>
+<script type="text/javascript" src="/javascripts/abi/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/abi/web3.min.js"></script>
+<script type="text/javascript" src="/javascripts/abi/app1.js"></script>
+<SCRIPT type="text/javascript">
+      var time1 = $('#time1').val();
+    
+  var maxtime = parseInt(time1); //一个小时，按秒计算，自己调整!
+  function CountDown() {
+    if (maxtime >= 0) {
+      minutes = Math.floor(maxtime / 60);
+      seconds = Math.floor(maxtime % 60);
+      msg = "距离结束还有" + minutes + "分" + seconds + "秒";
+      document.all["timer"].innerHTML = msg;
+      if (maxtime == 5 * 60)alert("还剩5分钟");
+        --maxtime;
+    } else{
+      clearInterval(timer);
+      alert("时间到，结束!");
+    }
+  }
+  timer = setInterval("CountDown()", 1000);
+</SCRIPT>
+
+</html>

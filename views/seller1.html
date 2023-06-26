@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="/javascripts/abi/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/test.css">
+    <script src="/javascripts/manage/manage.js"></script>
+</head>
+<body>
+  <link rel='stylesheet prefetch' href='/stylesheets/test1.css'>
+  <header>
+    <div class="logo"><a href="#"><h1>AU</h1></a>
+     
+    </div>
+    <nav role='navigation'>
+        <ul>
+          <li><a  href="/">拍卖中心</a>
+          </li>
+          <li><a class="active" href="/seller">卖方中心</a>
+          </li>
+          <li><a href="/manage">管理中心</a>
+          </li>
+        </ul>
+    </nav>
+</header>
+<footer>
+  <p>确定提交</p>
+  <input value="<%= fileUrl[0]%>" id="img1" style="display: none;">
+  <input value="<%= fileUrl[1]%>" id="img2" style="display: none;">
+  <input value="<%= fileUrl[2]%>" id="img3" style="display: none;">
+</footer>
+              图片1：<img src="<%= fileUrl[0]%>"  style="width: 100px; height: 100px;">
+              图片2：<img src="<%= fileUrl[1]%>"   style="width: 100px; height: 100px;">
+              图片3：<img src="<%= fileUrl[2]%>"  style="width: 100px; height: 100px;"> 
+            <div>
+              <div><span>拍卖物品的名称：<input type="text" id="GoodsName"  value="<%= GoodsName%>" ></span>
+            </div>
+            <div><span>物品描述：<input type="text" id="describe"  value="<%= describe%>" ></span>
+            </div>
+            <div>
+              物品起拍价格：<input type="text" id="price"  value="<%= price%>" >
+            </div>
+              物品持续时间：<input type="text" id="time" value="<%= time%>" >
+            </div>
+
+            <button onclick="face()">取消提交</button>
+            <button  class="seller1" onclick="seller1()">提交</button>
+</body>
+<script type="text/javascript" src="/javascripts/abi/web3.min.js"></script>
+<script type="text/javascript" src="/javascripts/abi/app1.js"></script>
+<script src="/javascripts/seller/seller.js"></script>
+<script>
+  function face() {
+    window.location.href="/seller"
+  }
+  
+</script>
+</html>

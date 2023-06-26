@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/test.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/first/a.css">
+  <script src="/javascripts/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+  <header>
+      <div class="logo"><a href="#"><h1>AU</h1></a>
+        <p>当前账户：<%= accounts%></p>
+      </div>
+      <nav role='navigation'>
+          <ul>
+              <li><a class="active" href="/">拍卖中心</a>
+              </li>
+              <li><a  href="/seller">卖方中心</a>
+              </li>
+              
+              <li><a href="/manage">管理中心</a>
+              </li>
+          </ul>
+      </nav>
+  </header>
+  <hr>  
+  <div class="bluelight">
+    <button class="btn" onclick="start()">Hover over me!</button>
+  </div>
+<p class="caption">请管理人员开启,他人请稍安勿躁</p>
+
+
+<script type="text/javascript" src="/javascripts/web3.min.js"></script>
+<script type="text/javascript" src="/javascripts/abi/app1.js"></script>
+</body>
+</html>
