@@ -10,8 +10,3 @@ Dapp 拍卖系统  2021-12-03完成
 进行拍卖
  ![image](https://github.com/Throb688/Dapp--auction/assets/77827171/df820833-c3ef-4629-a277-30bdf0770dfc)
 
-
-信息查看
-![image](https://github.com/Throb688/Dapp--auction/assets/77827171/f510a88d-2a6e-4178-8563-6f8456662230)
-
-
