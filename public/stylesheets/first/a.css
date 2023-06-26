@@ -1,0 +1,49 @@
+
+.btn {
+    position: relative;
+    z-index: 5;
+    margin: 40vh auto;
+    display: table;
+    font-size: 5vh;
+    border: 0.3vh solid #3498db;
+    background: none;
+    padding: 2vh 3.5vh;
+    color: #3498db;
+    border-radius: 1vh;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-transition: all 0.3s ease-in-out 0.1s;
+    transition: all 0.3s ease-in-out 0.1s;
+}
+.btn:hover {
+    color: white;
+}
+.btn:hover:before {
+    top: -300%;
+    left: 70%;
+}
+.btn:before {
+    z-index: -999;
+    position: absolute;
+    top: -170%;
+    left: -80%;
+    width: 410px;
+    height: 1000px;
+    content: "";
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background: #3498db;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+p.caption {
+    font-size: 0.7em;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 20px #0aafe6, 0 0 20px rgba(10, 175, 230, 0);
+}
